@@ -19,4 +19,4 @@ For this step we use `pyinstaller` and the convertion is done as follows
 pyinstaller --noconfirm --onefile --windowed --name "YouTube Context Scraper" --icon=application_icon.icns main.py --add-data '.env:.'
 ```
 
-Remark: For everything to work as expected, `load_dotenv`` must be loaded as [follows](https://github.com/theskumar/python-dotenv/issues/259).
+Remark: For everything to work as expected, `load_dotenv` must be loaded as [follows](https://github.com/theskumar/python-dotenv/issues/259).
