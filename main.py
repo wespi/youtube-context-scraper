@@ -1,10 +1,16 @@
+import sys
 import os
 import PySimpleGUI as sg
 from youtube_transcript_api import YouTubeTranscriptApi
 import openai
-from dotenv import load_dotenv, find_dotenv
+from dotenv import load_dotenv
 
-_ = load_dotenv(find_dotenv())  # read local .env file
+
+ext_data_dir = os.getcwd()
+if getattr(sys, "frozen", False):
+    ext_data_dir = sys._MEIPASS
+
+load_dotenv(dotenv_path=os.path.join(ext_data_dir, ".env"))
 openai.api_key = os.getenv("OPENAI_API_KEY")
 
 
