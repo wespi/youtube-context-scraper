@@ -20,7 +20,6 @@ def extract_transcript(youtube_url):
         transcript = YouTubeTranscriptApi.get_transcript(
             video_id, languages=["de", "en"]
         )
-        print(transcript)
         text = " ".join([t["text"].replace("\n", " ") for t in transcript])
         return text
     except Exception as e:
@@ -42,7 +41,11 @@ def main():
     layout = [
         [sg.Text("Enter YouTube Video URL:")],
         [sg.Input(key="URL")],
-        [sg.Button("Extract Transcript", button_color="tomato"), sg.Button("Clean Up"), sg.Button("Exit")],
+        [
+            sg.Button("Extract Transcript", button_color="tomato"),
+            sg.Button("Clean Up"),
+            sg.Button("Exit"),
+        ],
         [sg.Multiline(size=(80, 20), key="OUTPUT_TRANSCRIPT", autoscroll=True)],
         [sg.Button("Summarize", button_color="tomato")],
         [sg.Multiline(size=(80, 10), key="OUTPUT_SUMMARY", autoscroll=True)],
@@ -88,7 +91,7 @@ def main():
             Make each item one or two words long. 
 
             Format your response as a list of items separated by commas.
-            Hence, the resultlooks like [topic1, topic2, topic3, topic4, topic5].
+            Hence, the result looks like ``topic1, topic2, topic3, topic4, topic5``.
 
             Text sample: '''{transcript_text}'''
             """
