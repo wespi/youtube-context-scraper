@@ -28,13 +28,16 @@ def extract_transcript(youtube_url):
 
 
 def get_completion(prompt, model="gpt-3.5-turbo", temperature=0.7):
-    messages = [{"role": "user", "content": prompt}]
-    response = openai.ChatCompletion.create(
-        model=model,
-        messages=messages,
-        temperature=0.7,
-    )
-    return response.choices[0].message["content"]
+    try:
+        messages = [{"role": "user", "content": prompt}]
+        response = openai.ChatCompletion.create(
+            model=model,
+            messages=messages,
+            temperature=0.7,
+        )
+        return response.choices[0].message["content"]
+    except:
+        return "Your transcription is too long."
 
 
 def main():
