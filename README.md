@@ -1,5 +1,7 @@
 # YouTube Context Scraper
 
+**Remark: The YouTube Context Scraper works only for short videos and should be understood as a showcase project.**
+
 This application extracts information from YouTube videos. Supported languages are English and German.
 
 ## Features
