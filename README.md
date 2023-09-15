@@ -6,9 +6,9 @@ This application extracts information from YouTube videos. Supported languages a
 
 The YouTube Contex Scraper includes the following features:
 
-1. transcription of spoken text
-2. summary of transcription
-3. extraction of five topics that are being discussed
+1. Transcription of spoken text
+2. Summarizaiton of transcription
+3. Extraction of five key topics that are being discussed
 
 
 ## Convert Python File to Executable
@@ -20,3 +20,12 @@ pyinstaller --noconfirm --onefile --windowed --name "YouTube Context Scraper" --
 ```
 
 Remark: For everything to work as expected, `load_dotenv` must be loaded as [follows](https://github.com/theskumar/python-dotenv/issues/259).
+
+## OpenAI
+
+In order to use the API of ChatGTP, a key is needed. The key can be easily created on the OpenAI website
+and should be stored in a `.env` file on the same folder hierarchy as `main.py`. The content should look like this:
+
+```{shell}
+OPENAI_API_KEY=your_key_is_here
+```

@@ -96,7 +96,6 @@ def main():
             Text sample: '''{transcript_text}'''
             """
             response = get_completion(prompt, temperature=0)
-            print(response)
             window["OUTPUT_TOPICS"].update(response)
     window.close()
 
