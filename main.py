@@ -85,7 +85,7 @@ def main():
             window["OUTPUT_SUMMARY"].update(response)
         elif event == "Get Topics" and transcript_text:
             prompt = f"""
-            Determine five topics that are being discussed in the \
+            Determine five topics that are being discussed in the
             following text, which is delimited by triple backticks.
 
             Make each item one or two words long. 
@@ -93,7 +93,7 @@ def main():
             Format your response as a list of items separated by commas.
             Hence, the result looks like ``topic1, topic2, topic3, topic4, topic5``.
 
-            Text sample: '''{transcript_text}'''
+            Text: '''{transcript_text}'''
             """
             response = get_completion(prompt, temperature=0)
             window["OUTPUT_TOPICS"].update(response)
